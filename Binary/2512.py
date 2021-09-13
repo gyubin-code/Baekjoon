@@ -6,8 +6,7 @@ start = 1
 end = max(k)
 tmp_total_money=0
 while(start<=end):
-    a=tmp_total_money #전값
-    a_end =end
+    
     tmp_total_money=0
     mid = (start+end)//2 
     
@@ -17,11 +16,7 @@ while(start<=end):
             
         else:
             tmp_total_money+=i
-            
-    
-    b=tmp_total_money#이번값
-    b_end =end
-    
+             
     if tmp_total_money>total_money: #예상값이 더 큰 경우
         end =mid-1
     else: 
