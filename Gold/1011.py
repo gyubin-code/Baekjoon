@@ -1,10 +1,8 @@
 n= int(input())
 
-
+#Fly me to the Alpha Centauri
 def solve(k):
     dist = k[1]-k[0]
-
-    
     turn=1
     pos =1
     pos_pow=0
