@@ -1,21 +1,22 @@
 import sys
 input = sys.stdin.readline
 
-n, m = map(int, input().split())
-coins = sorted([int(input()) for _ in range(n)], reverse=True)
+n, k = map(int, input().split())
+coins = []
+for _ in range(n):
+    coins.append(int(input()))
 
-def using(coin, money, cnt):
-    if coin > money:
-        return cnt, money
-    cnt += money // coin
-    money = money % coin
-    return cnt, money
-cnt = 0
-for coin in coins:
-    cnt, m = using(coin, m, cnt)
+coins.sort(reverse=True)
 
-print(cnt)
+answer = 0
+for c in coins:
+    if k < 0:
+        break
+    if c > k:
+        continue
 
-
+    answer += k // c
+    k = k % c
 
 
+print(answer)
